@@ -1,0 +1,63 @@
+function [lfwInputs, lfwTargets, legenda, legenda2] = treinar( )
+    
+    % lfwInputs = matriz com features de cada imagem
+    % lfwTargets = matriz com codigo de retorno para cada imagem, codigo de
+    %              retorno indica a que classe a imagem pertence
+    % legenda = mapeia as targets em labels
+    % 
+
+
+
+    % returns the information in a structure array
+    CAMINHO_BASE = './training/';
+%    base = dir([CAMINHO_BASE,'/*.jpg']);
+    pastas = dir(CAMINHO_BASE);
+    
+    % ---------- opa
+    rfSize = 4;
+    eigvector = eye(rfSize^2);
+    Pyramid = [ 1 1; 2 2; 4 4; 6 6; 8 8; 10 10];
+    % ----------
+    
+    lfwInputs = [];
+    lfwTargets = [];
+    legenda = [];
+    legenda2 = [];
+    
+    for i = 1 : length(pastas)
+       
+       nome_pasta = pastas(i).name;
+       nome_pasta_completo = [CAMINHO_BASE, nome_pasta, '/'];
+       nome_fotos = dir([nome_pasta_completo, '/*jpg']);
+      
+       for j=1 : length(nome_fotos)
+           % imshow([nome_pasta_completo, nome_fotos(j).name]);
+           % tratando a imagem
+           x = imread([nome_pasta_completo, nome_fotos(j).name]);
+           % x = rgb2gray(x);
+           x = double(x);
+           
+           % display(nome_fotos(j).name);
+           % pegando as features da imagem
+          lfwInputs = [lfwInputs; fea_pooling(x,rfSize, eigvector, Pyramid)];
+           % gerando as targets           
+          lfwTargets =[lfwTargets; gerar_target(length(pastas), i)]; 
+          legenda2 = [legenda2; cellstr(nome_pasta)];
+                      
+       end    
+       % legenda pras targets
+       legenda = [legenda; cellstr(nome_pasta)];
+    end
+    
+    % formatando
+    % lfwInputs = lfwInputs';
+    lfwInputs(1, :) = [];
+    lfwTargets = lfwTargets';
+    lfwTargets(1, :) = [];
+    lfwTargets(1, :) = [];
+    legenda(1) = [];
+    legenda(1) = [];
+    legenda2(1, :) = [];
+  
+end
+
