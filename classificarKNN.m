@@ -2,9 +2,7 @@ function [ file_label ] = classificarKNN( file_name, lfwInputs, legenda2 )
 %CLASSIFICARKNN Summary of this function goes here
 %   Detailed explanation goes here
 
-    rfSize = 4;
-    eigvector = eye(rfSize^2);
-    Pyramid = [ 1 1; 2 2; 4 4; 6 6; 8 8; 10 10];
+    [ rfSize, eigvector, Pyramid ] = config();
     
         
     testImg = imread(file_name);
