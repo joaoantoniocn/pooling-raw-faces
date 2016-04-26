@@ -1,4 +1,4 @@
-function resultado = estatisticaClasseNeural( folder, legenda)
+function resultado = estatisticaClasseNeural( folder, legenda, net)
 %ESTATISTICACLASSE Summary of this function goes here
 %   Detailed explanation goes here
     
@@ -11,7 +11,7 @@ function resultado = estatisticaClasseNeural( folder, legenda)
     
     for i=1 : length(nome_fotos)
        
-       result = classificarNeural([caminho,nome_fotos(i).name], legenda);  
+       result = classificarNeural([caminho,nome_fotos(i).name], legenda, net);  
        
        if strcmp(nome_classe(1, :), result(1, :))          
            resultado = resultado + 1;     

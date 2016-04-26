@@ -1,4 +1,4 @@
-function [ acertos ] = estatisticaGeral( folder_name, lfwInputs, legenda, legenda2 )
+function [ acertos ] = estatisticaGeral( folder_name, lfwInputs, legenda, legenda2, net )
 %ESTATISTICAGERAL Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -11,7 +11,7 @@ function [ acertos ] = estatisticaGeral( folder_name, lfwInputs, legenda, legend
     for i=3 : length(pasta)
        
         valorKNN = estatisticaClasseKNN(pasta(i), lfwInputs, legenda2);
-        valorNeural = estatisticaClasseNeural(pasta(i), legenda);
+        valorNeural = estatisticaClasseNeural(pasta(i), legenda, net);
         
         acertos = [acertos; [cellstr(pasta(i).name), valorKNN, valorNeural]]; 
     end 

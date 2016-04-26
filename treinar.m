@@ -1,4 +1,4 @@
-function [lfwInputs, lfwTargets, legenda, legenda2] = treinar( )
+function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
     
     % lfwInputs = matriz com features de cada imagem
     % lfwTargets = matriz com codigo de retorno para cada imagem, codigo de
@@ -49,13 +49,31 @@ function [lfwInputs, lfwTargets, legenda, legenda2] = treinar( )
     
     % formatando
     % lfwInputs = lfwInputs';
-    lfwInputs(1, :) = [];
+    % lfwInputs(1, :) = [];
     lfwTargets = lfwTargets';
     lfwTargets(1, :) = [];
     lfwTargets(1, :) = [];
     legenda(1) = [];
     legenda(1) = [];
-    legenda2(1, :) = [];
+    %legenda2(1, :) = [];
   
+    % treinando rede neural
+   
+    x = lfwInputs;
+    x = x';
+    t = lfwTargets;
+
+    % Create a Pattern Recognition Network
+    hiddenLayerSize = 10;
+    net = patternnet(hiddenLayerSize);
+
+
+    % Setup Division of Data for Training, Validation, Testing
+    net.divideParam.trainRatio = 100/100;
+    net.divideParam.valRatio = 0/100;
+    net.divideParam.testRatio = 0/100;
+    
+    [net,tr] = train(net,x,t);
+    
 end
 
