@@ -4,7 +4,7 @@ function [ acertos ] = estatisticaGeral( folder_name, lfwInputs, legenda, legend
 
     pasta = dir(folder_name);
     acertos = [];
-    acertos = [acertos, cellstr('KNN'),cellstr('')];
+    acertos = [acertos, cellstr(''), cellstr('KNN')];
     acertos = [acertos, cellstr('Neural')];
     
     
