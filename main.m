@@ -17,4 +17,4 @@
 % TEST
 
 % classe = classificarKNN('./test/joao/joao-1.jpg', lfwInputs, legenda2);
-resultados = estatisticaGeral('./test/', lfwInputs, legenda2);
+resultados = estatisticaGeral('./test/', lfwInputs, legenda, legenda2);
