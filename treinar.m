@@ -9,7 +9,7 @@ function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
 
 
     % returns the information in a structure array
-    CAMINHO_BASE = './training/';
+    CAMINHO_BASE = './treino/';
 %    base = dir([CAMINHO_BASE,'/*.jpg']);
     pastas = dir(CAMINHO_BASE);
     
@@ -32,7 +32,7 @@ function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
            % imshow([nome_pasta_completo, nome_fotos(j).name]);
            % tratando a imagem
            x = imread([nome_pasta_completo, nome_fotos(j).name]);
-           % x = rgb2gray(x);
+            x = rgb2gray(x);
            x = double(x);
            
            % display(nome_fotos(j).name);

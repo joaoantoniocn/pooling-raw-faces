@@ -10,7 +10,7 @@ function [ ] = separarbase( file_name  )
        nome_fotos = dir([nome_pasta_completo, '/*jpg']);
        
        mkdir(['./treino/', nome_pasta]);
-       for j = 1 : length(nome_fotos)
+       for j = 0 : length(nome_fotos)
            
             if j <= (length(nome_fotos)/2)
              
