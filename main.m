@@ -9,7 +9,7 @@
 % lfwTargets = modelos (usado para Rede Neural)
 % legenda    = legenda para cada linha do lfwTargets
 % legenda2   = usado para o KNN
-%[lfwInputs, lfwTargets, legenda, legenda2, net] = treinar();
+[lfwInputs, lfwTargets, legenda, legenda2, net] = treinar();
 
 % -----------------------------------------------------------------
 
