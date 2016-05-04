@@ -7,7 +7,7 @@ function [ file_label ] = classificarKNN( file_name, lfwInputs, legenda2 )
         
     testImg = imread(file_name);
     testImg = double(testImg);
-    testImg = rgb2gray(testImg);
+    %testImg = rgb2gray(testImg);
     testFeatures = fea_pooling(testImg, rfSize, eigvector, Pyramid);
 
 

@@ -3,4 +3,6 @@
 /test
 /lfw
 /lfw-deepfunneled
+/treino
 *.mat
+~*

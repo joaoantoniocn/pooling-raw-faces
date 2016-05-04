@@ -9,7 +9,7 @@
 % lfwTargets = modelos (usado para Rede Neural)
 % legenda    = legenda para cada linha do lfwTargets
 % legenda2   = usado para o KNN
-[lfwInputs, lfwTargets, legenda, legenda2, net] = treinar();
+%[lfwInputs, lfwTargets, legenda, legenda2, net] = treinar();
 
 % -----------------------------------------------------------------
 
@@ -17,4 +17,4 @@
 % TEST
 
 % classe = classificarKNN('./test/joao/joao-1.jpg', lfwInputs, legenda2);
-% resultados = estatisticaGeral('./test/', lfwInputs, legenda, legenda2, net);
+ resultados = estatisticaGeral('./test/', lfwInputs, legenda, legenda2, net);
