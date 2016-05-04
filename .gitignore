@@ -2,3 +2,5 @@
 /training
 /test
 /lfw
+/lfw-deepfunneled
+*.mat
