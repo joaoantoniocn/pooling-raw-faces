@@ -12,9 +12,12 @@ function [ ] = separarbase( file_name  )
        mkdir(['./test/', nome_pasta]);
        for j = 1 : length(nome_fotos)
            
-            if j <= (length(nome_fotos)/4)
+            if j > (length(nome_fotos) - (length(nome_fotos)/4))
              
-              movefile([ nome_pasta_completo, '/', nome_fotos(j).name ], ['./test/', nome_pasta, '/', nome_fotos(j).name ])
+                if j <= length(nome_fotos)
+                    movefile([ nome_pasta_completo, '/', nome_fotos(j).name ], ['./test/', nome_pasta, '/', nome_fotos(j).name ])
+                end
+              
             end            
        end               
     end    

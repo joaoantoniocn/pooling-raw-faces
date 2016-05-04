@@ -4,5 +4,7 @@
 /lfw
 /lfw-deepfunneled
 /treino
+/folders
 *.mat
 ~*
+*.asv
