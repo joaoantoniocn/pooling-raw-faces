@@ -6,6 +6,7 @@ function [ file_label ] = classificarNeural( file_name, legenda, net )
             
     testImg = imread(file_name);
     testImg = double(testImg);
+    testImg = rgb2gray(testImg);
     testFeatures = fea_pooling(testImg, rfSize, eigvector, Pyramid);
     testFeatures = testFeatures';
     

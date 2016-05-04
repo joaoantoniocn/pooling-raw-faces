@@ -11,7 +11,7 @@ function [  ] = prepararBase( file_name  )
        nome_fotos = dir([nome_pasta_completo, '/*jpg']);
       
        if length(nome_fotos) <= 10
-          % apagando todas as pastas com menos de 3 fotos
+          % apagando todas as pastas com menos de n fotos
           rmdir( nome_pasta_completo, 's')
        end 
         
