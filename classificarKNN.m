@@ -1,8 +1,8 @@
-function [ file_label ] = classificarKNN( file_name, lfwInputs, legenda2 )
+function [ file_label ] = classificarKNN( file_name, lfwInputs, legenda2, eigvector )
 %CLASSIFICARKNN Summary of this function goes here
 %   Detailed explanation goes here
 
-    [ rfSize, eigvector, Pyramid ] = config();
+    [ rfSize, Pyramid ] = config();
     
         
     testImg = imread(file_name);

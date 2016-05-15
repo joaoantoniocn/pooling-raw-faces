@@ -14,7 +14,8 @@ function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
     pastas = dir(CAMINHO_BASE);
     
     % ---------- opa
-    [ rfSize, eigvector, Pyramid ] = config();
+    [ rfSize, Pyramid ] = config();
+    eigvector = PCA(CAMINHO_BASE);
     % ----------
     
     lfwInputs = [];

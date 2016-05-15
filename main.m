@@ -15,6 +15,6 @@
 
 
 % TEST
-
+eigvector = PCA('./treino/');
 % classe = classificarKNN('./test/joao/joao-1.jpg', lfwInputs, legenda2);
- resultados = estatisticaGeral('./test/', lfwInputs, legenda, legenda2, net);
+ resultados = estatisticaGeral('./test/', lfwInputs, legenda, legenda2, net, eigvector);

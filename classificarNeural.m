@@ -1,8 +1,8 @@
-function [ file_label ] = classificarNeural( file_name, legenda, net )
+function [ file_label ] = classificarNeural( file_name, legenda, net, eigvector )
 %CLASSIFICARNEURAL Summary of this function goes here
 %   Detailed explanation goes here
 
-    [ rfSize, eigvector, Pyramid ] = config();
+    [ rfSize, Pyramid ] = config();
             
     testImg = imread(file_name);
     testImg = double(testImg);

@@ -1,4 +1,4 @@
-function resultado = estatisticaClasseKNN( folder, lfwInputs, legenda2 )
+function resultado = estatisticaClasseKNN( folder, lfwInputs, legenda2, eigvector )
 %ESTATISTICACLASSE Summary of this function goes here
 %   Detailed explanation goes here
     
@@ -11,7 +11,7 @@ function resultado = estatisticaClasseKNN( folder, lfwInputs, legenda2 )
     
     for i=1 : length(nome_fotos)
        
-       result = classificarKNN([caminho,nome_fotos(i).name], lfwInputs, legenda2);  
+       result = classificarKNN([caminho,nome_fotos(i).name], lfwInputs, legenda2, eigvector);  
        
        if strcmp(nome_classe(1, :), result(1, :))          
            resultado = resultado + 1;     
