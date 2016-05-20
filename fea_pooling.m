@@ -18,9 +18,9 @@ function xp = fea_pooling(x, rfSize, eigvector, Pyramid)
 	patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches, 2)), ...
 					  sqrt(var(patches, [], 2)+10));
 
-	%applying PCA
-   
+	%applying PCA   
 	patches = patches * eigvector;
+    
 	%fliping
 	patches = [ max(patches, 0), -min(patches, 0) ];
 
