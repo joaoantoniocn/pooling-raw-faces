@@ -1,4 +1,4 @@
-function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
+function [lfwInputs, lfwTargets, legenda, legenda2, net, eigvector] = treinar( )
     
     % lfwInputs = matriz com features de cada imagem
     % lfwTargets = matriz com codigo de retorno para cada imagem, codigo de
@@ -15,7 +15,6 @@ function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( )
     
     % ---------- opa
     [ rfSize, Pyramid ] = config();
-    eigvector = PCA(CAMINHO_BASE);
     % ----------
     
     lfwInputs = [];

@@ -3,7 +3,7 @@ function [ media ] = retirarMedia( path )
     
     [ rfSize, Pyramid ] = config();
     
-    acumulado = zeros(9409, 16);
+    acumulado = zeros(getNumLinhasPatche(path), 16);
     quantidade_imagens = 0;
     
     for i = 3 : length(pastas)
@@ -19,8 +19,7 @@ function [ media ] = retirarMedia( path )
            
            % --------- patches
            patches =  im2col(x, [rfSize rfSize])';
-           prows = size(x, 1) - rfSize+1;
-           pcols = size(x, 2) - rfSize+1;
+           
            % contrast normalization
             patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches, 2)), ...
  					  sqrt(var(patches, [], 2)+10));
