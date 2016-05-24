@@ -1,4 +1,4 @@
-function [lfwInputs, lfwTargets, legenda, legenda2, net, eigvector] = treinar( )
+function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( eigvector)
     
     % lfwInputs = matriz com features de cada imagem
     % lfwTargets = matriz com codigo de retorno para cada imagem, codigo de

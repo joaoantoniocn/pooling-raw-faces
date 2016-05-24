@@ -10,7 +10,7 @@
 % legenda    = legenda para cada linha do lfwTargets
 % legenda2   = usado para o KNN
 eigvector = PCA('./treino/');
-[lfwInputs, lfwTargets, legenda, legenda2, net, eigvector] = treinar();
+[lfwInputs, lfwTargets, legenda, legenda2, net] = treinar(eigvector);
 
 % -----------------------------------------------------------------
 
