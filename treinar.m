@@ -64,7 +64,7 @@ function [lfwInputs, lfwTargets, legenda, legenda2, net] = treinar( eigvector)
     t = lfwTargets;
 
     % Create a Pattern Recognition Network
-    hiddenLayerSize = 10;
+    hiddenLayerSize = 1;
     net = patternnet(hiddenLayerSize);
 
 
